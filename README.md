@@ -63,6 +63,21 @@ source venv/bin/activate
 python scripts/train.py
 ```
 
+## Results
+
+This run was a 100-step LoRA fine-tune of `unsloth/Qwen3.5-4B` (LoRA r=16, alpha=16) on a single RTX 5070 Ti (16 GB VRAM) under WSL2, with sequence length 2048, batch size 2, and gradient accumulation 4.
+
+The run completed 100 steps. The final logged training loss at step 100 was 1.0766, with grad_norm 0.678 and learning rate 5.56e-07.
+
+Committed to the repo:
+- `adapter_model.safetensors` (81 MB), the final LoRA adapter
+- `adapter_config.json`, tokenizer, chat template and processor config
+- `trainer_state.json` from the checkpoint
+
+The venv and the checkpoint's optimizer state are excluded.
+
+This is a stack-validation run: 100 steps on a small sample shows the training pipeline works end to end, but it is not a quality benchmark and does not show that the model improved at any task.
+
 ## Configure
 
 Everything is controlled by environment variables at the top of
