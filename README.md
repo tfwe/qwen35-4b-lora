@@ -76,6 +76,8 @@ Committed to the repo:
 
 The venv and the checkpoint's optimizer state are excluded.
 
+The saved adapter loads and generates text; running `scripts/inference.py` against it produces a response, so the run is verified end to end rather than only by its loss curve.
+
 This is a stack-validation run: 100 steps on a small sample shows the training pipeline works end to end, but it is not a quality benchmark and does not show that the model improved at any task.
 
 ## Configure
