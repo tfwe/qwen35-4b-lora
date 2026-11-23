@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+unsloth_compiled_cache/
+outputs/qwen35-4b/checkpoint-100/*
+!outputs/qwen35-4b/checkpoint-100/trainer_state.json
